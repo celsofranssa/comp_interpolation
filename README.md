@@ -1,4 +1,4 @@
-# xCoFormer
+# Comp Interpolation Challenge
 
 ### 1. Quick Start
 
