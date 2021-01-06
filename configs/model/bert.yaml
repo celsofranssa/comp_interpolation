@@ -1,0 +1,6 @@
+# @package _group_
+
+name: "bert"
+
+predictions:
+  path: "../resources/predictions/bert_${data.name}_predictions.pt"

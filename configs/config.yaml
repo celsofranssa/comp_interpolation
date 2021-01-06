@@ -1,0 +1,8 @@
+defaults:
+  - model: bert
+  - data: dataset_01
+
+log:
+  dir: "../resources/logs/"
+
+tasks: [ "fit", "eval" ]
