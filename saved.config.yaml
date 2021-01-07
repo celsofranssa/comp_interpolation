@@ -1,3 +1,0 @@
-name: gpt
-predictions:
-  path: ../resources/predictions/gpt_dataset_02_predictions.pt
