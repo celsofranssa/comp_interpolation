@@ -20,16 +20,27 @@ class MyModel(pl.LightningModule):
             nn.ReLU(),
             nn.Linear(64, 3))
 
+        self.loss = nn.L1Loss()
+
     def forward(self, x):
         return x
 
     def training_step(self, batch, batch_idx):
-        return 0.0
+        predict = torch.randn(3, 5, requires_grad=True)
+        target = torch.randn(3, 5)
+
+        self.write_prediction_dict({
+            "predict": predict,
+            "target": target
+        }, self.hparams.predictions.path)
+
+        return self.loss(predict, target)
 
     def configure_optimizers(self):
         return torch.optim.Adam(self.parameters(), lr=1e-3)
 
     def train_dataloader(self):
         return DataLoader(
-            MNIST(os.getcwd(), download=True, transform=transforms.ToTensor())
+            MNIST(os.getcwd(), download=True, transform=transforms.ToTensor()),
+            batch_size=4
         )
