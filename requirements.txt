@@ -1,5 +1,5 @@
-hydra-core~=1.0.4
-pytorch-lightning
-torch~=1.7.1
-omegaconf~=2.0.5
-torchvision~=0.8.2
+hydra-core
+git+https://github.com/PyTorchLightning/pytorch-lightning
+torch
+omegaconf
+torchvision

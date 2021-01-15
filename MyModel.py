@@ -42,5 +42,5 @@ class MyModel(pl.LightningModule):
     def train_dataloader(self):
         return DataLoader(
             MNIST(os.getcwd(), download=True, transform=transforms.ToTensor()),
-            batch_size=4
+            batch_size=128
         )
